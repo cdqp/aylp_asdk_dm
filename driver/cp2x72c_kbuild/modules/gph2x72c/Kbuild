@@ -1,0 +1,4 @@
+obj-m := cp2x72c.o
+cp2x72c-y := diobm.o
+cp2x72c-y += bocp2x72cnoreg.o
+ccflags-y := -I$(src)/../dpg0100

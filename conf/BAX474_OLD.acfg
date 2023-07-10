@@ -1,0 +1,1 @@
+interface eth startChannel 0 ip 192.168.8.10 deVersion 7
