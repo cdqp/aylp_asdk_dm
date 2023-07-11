@@ -1,14 +1,30 @@
 #ifndef _AYLP_ASDK_DM_H
 #define _AYLP_ASDK_DM_H
 
+#include <gsl/gsl_block.h>
+
 #include "anyloop.h"
 
 #include "asdkWrapper.h"
 
 struct aylp_asdk_dm_data {
-	char *sn;	// serial number
-	asdkDM *dm;	// opaque dm object from asdk
-	size_t n_act;	// number of actuators
+	// param: serial number
+	char *sn;
+	// opaque dm object from asdk
+	asdkDM *dm;
+	// number of actuators
+	size_t n_act;
+	// param: matrix row indices corresponding to command; starts from 0
+	size_t *mat_is;
+	size_t mat_is_len;
+	// param: matrix column indices corresponding to command; starts from 0
+	size_t *mat_js;
+	size_t mat_js_len;
+	// param: 2 / peak-to-valley stroke of mirror in radians
+	double peak_per_rad;
+	// buffer to send (only used if we're not handed a contiguous command
+	// vector)
+	gsl_block *send_buf;
 };
 
 // initialize asdk

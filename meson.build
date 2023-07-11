@@ -14,8 +14,9 @@ asdk_dep = c.find_library(
 	dirs: join_paths(meson.source_root(), 'libasdk/x64'),
 	required: true
 )
+gsl_dep = dependency('gsl')
 json_dep = dependency('json-c')
-deps = [asdk_dep, json_dep]
+deps = [asdk_dep, gsl_dep, json_dep]
 
 add_global_arguments(['-DASDK_EXPORTS'], language: 'c')
 
