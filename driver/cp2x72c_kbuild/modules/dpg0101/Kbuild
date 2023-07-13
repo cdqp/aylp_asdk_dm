@@ -1,2 +1,0 @@
-obj-m := dpg0101.o
-ccflags-y := -I$(src)/../dpg0100

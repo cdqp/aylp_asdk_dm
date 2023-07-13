@@ -4,3 +4,9 @@ build
 # anyloop lib
 libaylp
 
+# alpao sdk
+libasdk
+
+# alpao config files
+BAX*
+
