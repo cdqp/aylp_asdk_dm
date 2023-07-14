@@ -1,5 +1,5 @@
-#ifndef _AYLP_ASDK_DM_H
-#define _AYLP_ASDK_DM_H
+#ifndef AYLP_ASDK_DM_H_
+#define AYLP_ASDK_DM_H_
 
 #include <gsl/gsl_block.h>
 
