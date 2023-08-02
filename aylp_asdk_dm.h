@@ -20,7 +20,8 @@ struct aylp_asdk_dm_data {
 	// param: matrix column indices corresponding to command; starts from 0
 	size_t *mat_js;
 	size_t mat_js_len;
-	// param: 2 / peak-to-valley stroke of mirror in radians
+	// param: 1 / peak-to-valley stroke of mirror in radians
+	// (i.e. 2/pvstroke/2, because of reflection)
 	double peak_per_rad;
 	// buffer to send (only used if we're not handed a contiguous command
 	// vector)
