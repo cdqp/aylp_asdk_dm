@@ -24,7 +24,7 @@
 			"uri": "file:build/aylp_asdk_dm.so",
 			"params": {
 				"sn": "BAX472",
-				"peak_per_rad": 0.025305636,
+				"peak_per_rad": 0.012652818,
 				"mat_is": [
 					0,0,0,0,0,
 					1,1,1,1,1,1,1,
