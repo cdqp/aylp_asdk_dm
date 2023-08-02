@@ -130,9 +130,6 @@ int aylp_asdk_dm_init(struct aylp_device *self)
 int aylp_asdk_dm_process(struct aylp_device *self, struct aylp_state *state)
 {
 	struct aylp_asdk_dm_data *data = self->device_data;
-	if (UNLIKELY(state->header.units == AYLP_U_RAD)) {
-		// convert to minmax
-	}
 	if (LIKELY(state->header.type == AYLP_T_VECTOR)) {
 		gsl_vector *v = state->vector;	// brevity
 		if (LIKELY(v->stride == 1)) {
