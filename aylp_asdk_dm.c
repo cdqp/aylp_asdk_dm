@@ -173,6 +173,7 @@ int aylp_asdk_dm_process(struct aylp_device *self, struct aylp_state *state)
 		}
 		log_trace("Indexing into pipeline matrix by mat_is and mat_js");
 		for (size_t i = 0; i < data->n_act; i++) {
+			errno = 0;
 			double tmp = gsl_matrix_get(state->matrix,
 				data->mat_is[i], data->mat_js[i]
 			);
