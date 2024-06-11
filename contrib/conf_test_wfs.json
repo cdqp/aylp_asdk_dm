@@ -54,7 +54,7 @@
 			}
 		},
 		{
-			"uri": "file:~/git/aylp_basler_fgsdk/build/aylp_basler_fgsdk.so",
+			"uri": "file:/home/user/git/aylp_basler_fgsdk/build/aylp_basler_fgsdk.so",
 			"params": {
 				"width": 80,
 				"height": 80,

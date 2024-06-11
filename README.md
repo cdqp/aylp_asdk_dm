@@ -34,7 +34,7 @@ libasdk
 ├── libait_pci7350.so
 ├── libait_pex292144.so
 ├── libait_sim.so
-└── libASDK.so
+└── libasdk.so
 
 1 directory, 14 files
 ```

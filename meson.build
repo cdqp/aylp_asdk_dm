@@ -10,7 +10,7 @@ incdir = include_directories(['libasdk', 'libaylp'])
 
 c = meson.get_compiler('c')
 asdk_dep = c.find_library(
-	'ASDK',
+	'asdk',
 	dirs: join_paths(meson.source_root(), 'libasdk'),
 	required: true
 )
