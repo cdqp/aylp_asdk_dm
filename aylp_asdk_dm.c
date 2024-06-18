@@ -119,7 +119,7 @@ int aylp_asdk_dm_init(struct aylp_device *self)
 
 	// set types
 	self->type_in = AYLP_T_VECTOR | AYLP_T_MATRIX;
-	self->units_in = AYLP_U_RAD | AYLP_U_MINMAX;
+	self->units_in = AYLP_U_MINMAX | AYLP_U_RAD;
 	self->type_out = 0;
 	self->units_out = 0;
 
