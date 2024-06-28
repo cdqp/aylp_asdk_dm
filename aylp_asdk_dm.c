@@ -65,14 +65,14 @@ int aylp_asdk_dm_init(struct aylp_device *self)
 			log_trace("sn = %s", data->sn);
 		} else if (!strcmp(key, "peak_per_rad")) {
 			data->peak_per_rad = json_object_get_double(val);
-			log_trace("peak_per_rad = %E", data->peak_per_rad);
+			log_trace("peak_per_rad = %G", data->peak_per_rad);
 		} else if (!strcmp(key, "mat_is")) {
 			size_t len = parse_mat_indices(&data->mat_is, val);
-			log_trace("got mat_is of length = %llu", len);
+			log_trace("got mat_is of length = %zu", len);
 			data->mat_is_len = len;
 		} else if (!strcmp(key, "mat_js")) {
 			size_t len = parse_mat_indices(&data->mat_js, val);
-			log_trace("got mat_js of length = %llu", len);
+			log_trace("got mat_js of length = %zu", len);
 			data->mat_js_len = len;
 		} else {
 			log_warn("Unknown parameter \"%s\"", key);
