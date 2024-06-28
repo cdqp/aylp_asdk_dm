@@ -30,7 +30,7 @@ static size_t parse_mat_indices(size_t **mat_is, json_object *obj)
 			json_object_array_get_idx(obj, i)
 		);
 		if (errno) {
-			log_error("Couldn't convert value at index %llu: %s",
+			log_error("Couldn't convert value at index %zu: %s",
 				i, strerror(errno)
 			);
 		}
@@ -100,7 +100,7 @@ int aylp_asdk_dm_init(struct aylp_device *self)
 		return -1;
 	}
 	data->n_act = (size_t)tmp;
-	log_info("Seeing %u actuators", data->n_act);
+	log_info("Seeing %zu actuators", data->n_act);
 	err = asdkSet(data->dm, "NbSteps", 1.0);
 	if (err) {
 		log_error("Failed to set number of steps:");
@@ -159,14 +159,14 @@ int aylp_asdk_dm_process(struct aylp_device *self, struct aylp_state *state)
 	} else if (state->header.type == AYLP_T_MATRIX) {
 		if (UNLIKELY(data->mat_is_len < state->matrix->size1)) {
 			log_error("Refusing to index into mat_is with length "
-				"of only %llu when we have %llu actuators",
+				"of only %zu when we have %zu actuators",
 				data->mat_is_len, data->n_act
 			);
 			return -1;
 		}
 		if (UNLIKELY(data->mat_js_len < state->matrix->size2)) {
 			log_error("Refusing to index into mat_js with length "
-				"of only %llu when we have %llu actuators",
+				"of only %zu when we have %zu actuators",
 				data->mat_js_len, data->n_act
 			);
 			return -1;
@@ -178,7 +178,7 @@ int aylp_asdk_dm_process(struct aylp_device *self, struct aylp_state *state)
 				data->mat_is[i], data->mat_js[i]
 			);
 			if (!tmp && errno) {
-				log_warn("Couldn't index matrix at (%llu,%llu):"
+				log_warn("Couldn't index matrix at (%zu,%zu):"
 					" %s", data->mat_is[i], data->mat_js[i],
 					strerror(errno)
 				);
@@ -186,7 +186,7 @@ int aylp_asdk_dm_process(struct aylp_device *self, struct aylp_state *state)
 			data->send_buf->data[i] = tmp;
 		}
 	} else {
-		log_error("Bug: unsupported type 0x%hX", state->header.type);
+		log_error("Bug: unsupported type 0x%hhX", state->header.type);
 		return -1;
 	}
 	// convert from rad to minmax
